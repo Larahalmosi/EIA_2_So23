@@ -248,9 +248,8 @@ var LuftfahrtClasses;
         LuftfahrtClasses.crc2.fill();
         LuftfahrtClasses.crc2.closePath();
     }
-    ;
     function drawGrass(numGrass) {
-        let grassColor = '#00ad0e';
+        let grassColor = "#00ad0e";
         for (let i = 0; i < numGrass; i++) {
             const x = Math.random() * LuftfahrtClasses.crc2.canvas.width;
             const y = 450 + Math.random() * 20;

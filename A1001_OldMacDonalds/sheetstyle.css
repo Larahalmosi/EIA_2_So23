@@ -1,0 +1,34 @@
+body{
+    background-image: url(rustic-farm-918105_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 14px;
+   text-align: center;
+}
+#content{
+    background-color: bisque;
+    width: 550px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+button{
+    border-radius: 10px;
+    background-color: bisque; padding: 10px;
+}
+button:hover{
+    background-color: burlywood;
+}
+footer{
+    background-color: bisque;
+    height: 20px;
+    display: block;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
+}

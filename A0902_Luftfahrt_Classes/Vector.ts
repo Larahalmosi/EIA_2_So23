@@ -30,5 +30,9 @@ namespace LuftfahrtClasses{
           this.set(Math.cos(direction), Math.sin(direction));
           this.scale(length);
         }
+        subtract(_vector: Vector): Vector {
+          return new Vector(this.x - _vector.x, this.y - _vector.y);
+        }
+        
       }
     }

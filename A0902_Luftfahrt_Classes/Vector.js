@@ -25,6 +25,9 @@ var LuftfahrtClasses;
             this.set(Math.cos(direction), Math.sin(direction));
             this.scale(length);
         }
+        subtract(_vector) {
+            return new Vector(this.x - _vector.x, this.y - _vector.y);
+        }
     }
     LuftfahrtClasses.Vector = Vector;
 })(LuftfahrtClasses || (LuftfahrtClasses = {}));

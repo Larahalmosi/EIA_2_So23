@@ -14,10 +14,16 @@ namespace LuftfahrtClasses {
     }
     move(_timeslice: number): void{
        // console.log("Paraglider move");
-        let Startpoint: Vector = new Vector (this.velosity.x,this.velosity.y);
-        let Endpoint: Vector = new Vector (this.velosity.x,this.velosity.y);
-        Startpoint.scale(_timeslice);
-        this.position.add(Startpoint);
+let Startpoint = new Vector(0, 20);
+let Endpoint = new Vector(480, 400);
+Startpoint.scale(_timeslice);
+Endpoint.scale(_timeslice);
+let startPosition = this.position.clone();
+let endPosition = this.position.clone();
+startPosition.add(Startpoint);
+endPosition.add(Endpoint);
+
+let paragliderVector = endPosition.subtract(startPosition);
     }
     draw():void{
         //console.log("Paraglider draw");

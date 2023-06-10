@@ -14,10 +14,15 @@ var LuftfahrtClasses;
         }
         move(_timeslice) {
             // console.log("Paraglider move");
-            let Startpoint = new LuftfahrtClasses.Vector(this.velosity.x, this.velosity.y);
-            let Endpoint = new LuftfahrtClasses.Vector(this.velosity.x, this.velosity.y);
+            let Startpoint = new LuftfahrtClasses.Vector(0, 20);
+            let Endpoint = new LuftfahrtClasses.Vector(480, 400);
             Startpoint.scale(_timeslice);
-            this.position.add(Startpoint);
+            Endpoint.scale(_timeslice);
+            let startPosition = this.position.clone();
+            let endPosition = this.position.clone();
+            startPosition.add(Startpoint);
+            endPosition.add(Endpoint);
+            let paragliderVector = endPosition.subtract(startPosition);
         }
         draw() {
             //console.log("Paraglider draw");

@@ -1,0 +1,10 @@
+namespace OldMacDonalds10 {
+  export class Cow extends Animal {
+    animaltype: string;
+    name: string;
+    food: string;
+    foodstock: number;
+    portion: number;
+    noise: string;
+  }
+}
