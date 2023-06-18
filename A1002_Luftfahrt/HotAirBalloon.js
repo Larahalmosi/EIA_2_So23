@@ -1,7 +1,7 @@
 "use strict";
 var LuftfahrtPolymorphie;
 (function (LuftfahrtPolymorphie) {
-    class HotAirBalloon extends Moveable {
+    class HotAirBalloon extends LuftfahrtPolymorphie.Moveable {
         position;
         velosity;
         constructor(_position) {

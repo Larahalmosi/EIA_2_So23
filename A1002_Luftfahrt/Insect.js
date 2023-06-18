@@ -1,7 +1,7 @@
 "use strict";
 var LuftfahrtPolymorphie;
 (function (LuftfahrtPolymorphie) {
-    class Insect extends Moveable {
+    class Insect extends LuftfahrtPolymorphie.Moveable {
         position;
         velosity;
         size;
