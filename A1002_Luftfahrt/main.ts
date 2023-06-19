@@ -12,6 +12,8 @@ namespace LuftfahrtPolymorphie {
   let golden: number = 0.62;
   let background: ImageData;
 
+  let moveables: Moveable[] = [];
+
   function handleLoad(_event: Event): void {
     let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
     if (!canvas) return;
@@ -30,7 +32,7 @@ namespace LuftfahrtPolymorphie {
     crc2.putImageData(background, 0, 0);
     console.log(drawStaticObjects);
 
-    let hotairballoon: HotAirBalloon = new HotAirBalloon(4);
+/*     let hotairballoon: HotAirBalloon = new HotAirBalloon(4);
     console.log(hotairballoon);
     createHotairballoons(4);
     HotAirBalloons.push(hotairballoon);
@@ -43,7 +45,7 @@ namespace LuftfahrtPolymorphie {
     console.log(insect);
     createInsects(5);
     Insects.push(insect);
-
+ */
     window.requestAnimationFrame(update);
     window.setInterval(update, 20);
   }
@@ -350,14 +352,11 @@ namespace LuftfahrtPolymorphie {
     crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
     crc2.putImageData(background, 0, 0);
 
-    for (let hotairballoon of HotAirBalloons) {
-      hotairballoon.move(1 / 300);
-      hotairballoon.draw();
+    for (let moveable of moveables) {
+      moveable.move(1 / 60);
+      moveable.draw();
     }
 
-    for (let insect of Insects) {
-      insect.move(1 / 70);
-      insect.draw();
-    }
+   
   }
 }

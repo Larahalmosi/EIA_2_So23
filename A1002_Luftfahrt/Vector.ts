@@ -33,5 +33,8 @@ namespace LuftfahrtPolymorphie {
     subtract(_vector: Vector): Vector {
       return new Vector(this.x - _vector.x, this.y - _vector.y);
     }
+    copy(): Vector {
+      return new Vector(this.x, this.y)
+    }
   }
 }

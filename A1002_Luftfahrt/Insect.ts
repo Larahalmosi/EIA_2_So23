@@ -4,8 +4,8 @@ namespace LuftfahrtPolymorphie {
     velosity: Vector;
     size: number;
 
-    constructor(_position: number) {
-      super(_position)
+    constructor(_position: Vector) {
+      super(_position);
       //console.log("Insect constructor");
       this.position = new Vector(0, 0);
       this.velosity = new Vector(0, 0);

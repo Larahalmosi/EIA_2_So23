@@ -3,8 +3,8 @@ namespace LuftfahrtPolymorphie {
     position: Vector;
     velosity: Vector;
 
-    constructor(_position: number) {
-      super(_position)
+    constructor(_position: Vector) {
+      super(_position);
       console.log("Balloon constructor");
       this.position = new Vector(480, 400);
       this.velosity = new Vector(0, 0);

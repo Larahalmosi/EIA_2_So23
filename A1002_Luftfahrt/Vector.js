@@ -28,6 +28,9 @@ var LuftfahrtPolymorphie;
         subtract(_vector) {
             return new Vector(this.x - _vector.x, this.y - _vector.y);
         }
+        copy() {
+            return new Vector(this.x, this.y);
+        }
     }
     LuftfahrtPolymorphie.Vector = Vector;
 })(LuftfahrtPolymorphie || (LuftfahrtPolymorphie = {}));

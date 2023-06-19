@@ -4,9 +4,9 @@ namespace LuftfahrtPolymorphie {
     velosity: Vector;
     size: number;
 
-    constructor(_position: number) {
+    constructor(_position: Vector) {
       // console.log("Paraglider constructor");
-      super(_position)
+      super(_position);
       this.position = new Vector(0, 0);
       this.velosity = new Vector(0, 0);
       this.velosity.random(100, 200);
