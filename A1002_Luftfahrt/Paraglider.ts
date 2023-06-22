@@ -4,9 +4,9 @@ namespace LuftfahrtPolymorphie {
     velosity: Vector;
     size: number;
 
-    constructor(_position: Vector) {
+    constructor() {
       // console.log("Paraglider constructor");
-      super(_position);
+      super();
       this.position = new Vector(0, 0);
       this.velosity = new Vector(0, 0);
       this.velosity.random(100, 200);
@@ -16,14 +16,18 @@ namespace LuftfahrtPolymorphie {
       // console.log("Paraglider move");
       let Startpoint = new Vector(0, 20);
       let Endpoint = new Vector(480, 400);
-      Startpoint.scale(_timeslice);
-      Endpoint.scale(_timeslice);
-      let startPosition = this.position.copy();
-      let endPosition = this.position.copy();
-      startPosition.add(Startpoint);
-      endPosition.add(Endpoint);
+      let verbindungsVector = Endpoint.subtract(Startpoint);
+      verbindungsVector.scale(_timeslice * 0.3);
 
-      let paragliderVector = endPosition.subtract(startPosition);
+      
+
+      if(this.position.x > Endpoint.x && this.position.y > Endpoint.y) {
+        verbindungsVector = new Vector(0,0);
+        
+      }
+
+      this.position.add(verbindungsVector);
+
     }
     draw(): void {
       //console.log("Paraglider draw");

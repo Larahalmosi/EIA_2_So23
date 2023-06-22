@@ -5,8 +5,8 @@ var LuftfahrtPolymorphie;
         position;
         velosity;
         size;
-        constructor(_position) {
-            super(_position);
+        constructor() {
+            super();
             //console.log("Insect constructor");
             this.position = new LuftfahrtPolymorphie.Vector(0, 0);
             this.velosity = new LuftfahrtPolymorphie.Vector(0, 0);
@@ -14,22 +14,7 @@ var LuftfahrtPolymorphie;
         }
         move(_timeslice) {
             // console.log("Insect move");
-            let offset = new LuftfahrtPolymorphie.Vector(this.velosity.x, this.velosity.y);
-            offset.scale(_timeslice);
-            this.position.add(offset);
-            // wenn position canvas verlässt
-            if (this.position.x < 0)
-                //addend
-                this.position.x += LuftfahrtPolymorphie.crc2.canvas.width;
-            if (this.position.y < 0)
-                //addend
-                this.position.y += LuftfahrtPolymorphie.crc2.canvas.height;
-            if (this.position.x > LuftfahrtPolymorphie.crc2.canvas.width)
-                //addend
-                this.position.x -= LuftfahrtPolymorphie.crc2.canvas.width;
-            if (this.position.y > LuftfahrtPolymorphie.crc2.canvas.height)
-                //addend
-                this.position.y -= LuftfahrtPolymorphie.crc2.canvas.height;
+            super.move(_timeslice);
         }
         draw() {
             // console.log("Insect draw");

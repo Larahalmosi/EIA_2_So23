@@ -15,9 +15,19 @@ var LuftfahrtPolymorphie;
             this.x *= _factor;
             this.y *= _factor;
         }
+        scaleReturn(_factor) {
+            this.x *= _factor;
+            this.y *= _factor;
+            return this;
+        }
         add(_addend) {
             this.x += _addend.x;
             this.y += _addend.y;
+        }
+        addReturn(_addend) {
+            this.x += _addend.x;
+            this.y += _addend.y;
+            return this;
         }
         random(_minLength, _maxLength) {
             let length = _minLength + Math.random() * (_maxLength - _minLength);

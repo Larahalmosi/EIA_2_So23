@@ -17,6 +17,7 @@ var LuftfahrtPolymorphie;
             console.log("Moveable move");
             //Verschiebung
             let offset = this.velosity.copy();
+            //offset.x += wind; 
             offset.scale(_timeslice);
             this.position.add(offset);
             // wenn position canvas verlässt

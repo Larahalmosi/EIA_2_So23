@@ -4,8 +4,8 @@ var LuftfahrtPolymorphie;
     class HotAirBalloon extends LuftfahrtPolymorphie.Moveable {
         position;
         velosity;
-        constructor(_position) {
-            super(_position);
+        constructor() {
+            super();
             console.log("Balloon constructor");
             this.position = new LuftfahrtPolymorphie.Vector(480, 400);
             this.velosity = new LuftfahrtPolymorphie.Vector(0, 0);
@@ -14,7 +14,7 @@ var LuftfahrtPolymorphie;
         move(_timeslice) {
             //console.log("Balloon move");
             let offset = new LuftfahrtPolymorphie.Vector(this.velosity.x, this.velosity.y);
-            offset.scale(_timeslice);
+            offset.scale(_timeslice * 0.2);
             this.position.add(offset);
             // Begrenzung auf y-Maximum
             if (this.position.y < 100) {
@@ -26,9 +26,11 @@ var LuftfahrtPolymorphie;
             // Begrenzung auf Canvas-Breite
             if (this.position.x < 0) {
                 this.position.x = 0;
+                this.velosity.x *= -1;
             }
             else if (this.position.x > 820) {
                 this.position.x = 820;
+                this.velosity.x *= -1;
             }
         }
         draw() {

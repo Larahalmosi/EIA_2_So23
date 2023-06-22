@@ -5,9 +5,9 @@ var LuftfahrtPolymorphie;
         position;
         velosity;
         size;
-        constructor(_position) {
+        constructor() {
             // console.log("Paraglider constructor");
-            super(_position);
+            super();
             this.position = new LuftfahrtPolymorphie.Vector(0, 0);
             this.velosity = new LuftfahrtPolymorphie.Vector(0, 0);
             this.velosity.random(100, 200);
@@ -16,13 +16,12 @@ var LuftfahrtPolymorphie;
             // console.log("Paraglider move");
             let Startpoint = new LuftfahrtPolymorphie.Vector(0, 20);
             let Endpoint = new LuftfahrtPolymorphie.Vector(480, 400);
-            Startpoint.scale(_timeslice);
-            Endpoint.scale(_timeslice);
-            let startPosition = this.position.copy();
-            let endPosition = this.position.copy();
-            startPosition.add(Startpoint);
-            endPosition.add(Endpoint);
-            let paragliderVector = endPosition.subtract(startPosition);
+            let verbindungsVector = Endpoint.subtract(Startpoint);
+            verbindungsVector.scale(_timeslice * 0.3);
+            if (this.position.x > Endpoint.x && this.position.y > Endpoint.y) {
+                verbindungsVector = new LuftfahrtPolymorphie.Vector(0, 0);
+            }
+            this.position.add(verbindungsVector);
         }
         draw() {
             //console.log("Paraglider draw");

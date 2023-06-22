@@ -17,9 +17,21 @@ namespace LuftfahrtPolymorphie {
       this.y *= _factor;
     }
 
+    scaleReturn(_factor: number): Vector {
+      this.x *= _factor;
+      this.y *= _factor;
+      return this;
+    }
+
     add(_addend: Vector): void {
       this.x += _addend.x;
       this.y += _addend.y;
+    }
+
+    addReturn(_addend: Vector): Vector {
+      this.x += _addend.x;
+      this.y += _addend.y;
+      return this;
     }
 
     random(_minLength: number, _maxLength: number): void {

@@ -4,8 +4,8 @@ namespace LuftfahrtPolymorphie {
     velosity: Vector;
     size: number;
 
-    constructor(_position: Vector) {
-      super(_position);
+    constructor() {
+      super();
       //console.log("Insect constructor");
       this.position = new Vector(0, 0);
       this.velosity = new Vector(0, 0);
@@ -15,22 +15,7 @@ namespace LuftfahrtPolymorphie {
     }
     move(_timeslice: number): void {
       // console.log("Insect move");
-      let offset: Vector = new Vector(this.velosity.x, this.velosity.y);
-      offset.scale(_timeslice);
-      this.position.add(offset);
-      // wenn position canvas verlässt
-      if (this.position.x < 0)
-        //addend
-        this.position.x += crc2.canvas.width;
-      if (this.position.y < 0)
-        //addend
-        this.position.y += crc2.canvas.height;
-      if (this.position.x > crc2.canvas.width)
-        //addend
-        this.position.x -= crc2.canvas.width;
-      if (this.position.y > crc2.canvas.height)
-        //addend
-        this.position.y -= crc2.canvas.height;
+     super.move(_timeslice);
     }
 
     draw(): void {
