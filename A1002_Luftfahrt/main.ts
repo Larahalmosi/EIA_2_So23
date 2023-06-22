@@ -13,6 +13,8 @@ namespace LuftfahrtPolymorphie {
   let background: ImageData;
 
   let moveables: Moveable[] = [];
+  console.log(moveables);
+  create();
 
   function handleLoad(_event: Event): void {
     let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
@@ -32,20 +34,6 @@ namespace LuftfahrtPolymorphie {
     crc2.putImageData(background, 0, 0);
     console.log(drawStaticObjects);
 
-/*     let hotairballoon: HotAirBalloon = new HotAirBalloon(4);
-    console.log(hotairballoon);
-    createHotairballoons(4);
-    HotAirBalloons.push(hotairballoon);
-    let paraglider: Paraglider = new Paraglider(5);
-    console.log(paraglider);
-    createParagliders(1);
-    Paragliders.push(paraglider);
-
-    let insect: Insect = new Insect(1);
-    console.log(insect);
-    createInsects(5);
-    Insects.push(insect);
- */
     window.requestAnimationFrame(update);
     window.setInterval(update, 20);
   }
@@ -347,6 +335,20 @@ namespace LuftfahrtPolymorphie {
       crc2.stroke();
     }
   }
+  function create(): void {
+    for (let index: number = 0; index < 5; index++) {
+      let hotairballoon: HotAirBalloon = new HotAirBalloon();
+      moveables.push(hotairballoon);
+    }
+    for (let index: number = 0; index < 10; index++) {
+      let paraglider: Paraglider = new Paraglider();
+      moveables.push(paraglider);
+    }
+    for (let index: number = 0; index < 10; index++) {
+      let insect: Insect = new Insect();
+      moveables.push(insect);
+    }
+  }
 
   export function update(): void {
     crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
@@ -356,7 +358,5 @@ namespace LuftfahrtPolymorphie {
       moveable.move(1 / 60);
       moveable.draw();
     }
-
-   
   }
 }

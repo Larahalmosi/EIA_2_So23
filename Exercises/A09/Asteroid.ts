@@ -9,9 +9,6 @@ namespace A09_Asteroids {
       console.log("Asteroid constructor");
       
       super(_position);
-
-      if (_position) this.position = _position.copy();
-      else this.position = new Vector(0, 0);
       //min, max lenght festlegen
       this.velosity = new Vector(0, 0);
       this.velosity.random(100, 200);

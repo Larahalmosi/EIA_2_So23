@@ -20,6 +20,8 @@ namespace A09_Asteroids {
 
     createAsteroids(5);
     //createShip();
+    createUfo();
+    createUfo();
 
     window.addEventListener("mousedown", shootProjectile);
     window.addEventListener("mouseup", shootLaser);

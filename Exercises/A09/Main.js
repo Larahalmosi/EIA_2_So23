@@ -18,6 +18,8 @@ var A09_Asteroids;
         console.log("Asteroids paths:", A09_Asteroids.asteroidPaths);
         createAsteroids(5);
         //createShip();
+        createUfo();
+        createUfo();
         window.addEventListener("mousedown", shootProjectile);
         window.addEventListener("mouseup", shootLaser);
         //window.addEventListener("keypress",handleKeypress);

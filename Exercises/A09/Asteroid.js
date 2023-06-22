@@ -9,10 +9,6 @@ var A09_Asteroids;
         constructor(_size, _position) {
             console.log("Asteroid constructor");
             super(_position);
-            if (_position)
-                this.position = _position.copy();
-            else
-                this.position = new A09_Asteroids.Vector(0, 0);
             //min, max lenght festlegen
             this.velosity = new A09_Asteroids.Vector(0, 0);
             this.velosity.random(100, 200);

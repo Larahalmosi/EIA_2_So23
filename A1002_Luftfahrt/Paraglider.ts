@@ -18,8 +18,8 @@ namespace LuftfahrtPolymorphie {
       let Endpoint = new Vector(480, 400);
       Startpoint.scale(_timeslice);
       Endpoint.scale(_timeslice);
-      let startPosition = this.position.clone();
-      let endPosition = this.position.clone();
+      let startPosition = this.position.copy();
+      let endPosition = this.position.copy();
       startPosition.add(Startpoint);
       endPosition.add(Endpoint);
 

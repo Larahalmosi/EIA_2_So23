@@ -13,6 +13,8 @@ var LuftfahrtPolymorphie;
     let golden = 0.62;
     let background;
     let moveables = [];
+    console.log(moveables);
+    create();
     function handleLoad(_event) {
         let canvas = document.querySelector("canvas");
         if (!canvas)
@@ -27,20 +29,6 @@ var LuftfahrtPolymorphie;
         background = LuftfahrtPolymorphie.crc2.getImageData(0, 0, LuftfahrtPolymorphie.crc2.canvas.width, LuftfahrtPolymorphie.crc2.canvas.height);
         LuftfahrtPolymorphie.crc2.putImageData(background, 0, 0);
         console.log(drawStaticObjects);
-        /*     let hotairballoon: HotAirBalloon = new HotAirBalloon(4);
-            console.log(hotairballoon);
-            createHotairballoons(4);
-            HotAirBalloons.push(hotairballoon);
-            let paraglider: Paraglider = new Paraglider(5);
-            console.log(paraglider);
-            createParagliders(1);
-            Paragliders.push(paraglider);
-        
-            let insect: Insect = new Insect(1);
-            console.log(insect);
-            createInsects(5);
-            Insects.push(insect);
-         */
         window.requestAnimationFrame(update);
         window.setInterval(update, 20);
     }
@@ -266,12 +254,26 @@ var LuftfahrtPolymorphie;
             LuftfahrtPolymorphie.crc2.stroke();
         }
     }
+    function create() {
+        for (let index = 0; index < 5; index++) {
+            let hotairballoon = new LuftfahrtPolymorphie.HotAirBalloon();
+            moveables.push(hotairballoon);
+        }
+        for (let index = 0; index < 10; index++) {
+            let paraglider = new LuftfahrtPolymorphie.Paraglider();
+            moveables.push(paraglider);
+        }
+        for (let index = 0; index < 10; index++) {
+            let insect = new LuftfahrtPolymorphie.Insect();
+            moveables.push(insect);
+        }
+    }
     function update() {
         LuftfahrtPolymorphie.crc2.clearRect(0, 0, LuftfahrtPolymorphie.crc2.canvas.width, LuftfahrtPolymorphie.crc2.canvas.height);
         LuftfahrtPolymorphie.crc2.putImageData(background, 0, 0);
-        for (let moveables of moveables) {
-            m.move(1 / 60);
-            hotairballoon.draw();
+        for (let moveable of moveables) {
+            moveable.move(1 / 60);
+            moveable.draw();
         }
     }
     LuftfahrtPolymorphie.update = update;
