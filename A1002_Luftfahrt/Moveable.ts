@@ -12,7 +12,7 @@ namespace LuftfahrtPolymorphie {
       this.velosity = new Vector(0, 0);
     }
     move(_timeslice: number): void {
-      console.log("Moveable move");
+      //console.log("Moveable move");
       //Verschiebung
       let offset: Vector = this.velosity.copy();
       //offset.x += wind; 

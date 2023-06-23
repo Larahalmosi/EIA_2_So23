@@ -2,8 +2,8 @@
 Aufgabe: <L10.2_Luftfahrt_Polymorphie>
 Name: <Lara Sophia Elisabeth Halmosi>
 Matrikel: <271343>
-Datum: <17.06.2023>
-Quellen: <insects and windsock inspired by Marie Eckl, chat GPT, mozilla.org>
+Datum: <24.06.2023>
+Quellen: <insects and windsock inspired by Marie Eckl,paraglider move inspired insired by Theresa Hauser, chat GPT, mozilla.org>
 */
 // Handle-load function
 namespace LuftfahrtPolymorphie {
@@ -340,7 +340,7 @@ namespace LuftfahrtPolymorphie {
       let hotairballoon: HotAirBalloon = new HotAirBalloon();
       moveables.push(hotairballoon);
     }
-    for (let index: number = 0; index < 10; index++) {
+    for (let index: number = 0; index < 4; index++) {
       let paraglider: Paraglider = new Paraglider();
       moveables.push(paraglider);
     }

@@ -14,7 +14,7 @@ var LuftfahrtPolymorphie;
             this.velosity = new LuftfahrtPolymorphie.Vector(0, 0);
         }
         move(_timeslice) {
-            console.log("Moveable move");
+            //console.log("Moveable move");
             //Verschiebung
             let offset = this.velosity.copy();
             //offset.x += wind; 
